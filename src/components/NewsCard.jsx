@@ -7,7 +7,7 @@ function NewsCard({ article }) {
   return (
     <article className="card transform hover:-translate-y-1 transition-all duration-200">
       {(article.urlToImage || fallbackImage) && (
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-48 overflow-hidden cursor-pointer">
           <img
             src={article.urlToImage || fallbackImage}
             alt={article.title}
@@ -17,7 +17,7 @@ function NewsCard({ article }) {
               e.target.src = fallbackImage
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
         </div>
       )}
       <div className="p-4">

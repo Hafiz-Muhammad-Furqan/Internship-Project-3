@@ -4,10 +4,6 @@ const initialState = {
   articles: [],
   loading: false,
   error: null,
-  filters: {
-    category: 'general',
-    searchQuery: '',
-  },
 }
 
 const newsSlice = createSlice({
@@ -26,11 +22,9 @@ const newsSlice = createSlice({
       state.error = action.payload
       state.loading = false
     },
-    setFilters: (state, action) => {
-      state.filters = { ...state.filters, ...action.payload }
-    },
+   
   },
 })
 
-export const { setArticles, setLoading, setError, setFilters } = newsSlice.actions
+export const { setArticles, setLoading, setError } = newsSlice.actions
 export default newsSlice.reducer
