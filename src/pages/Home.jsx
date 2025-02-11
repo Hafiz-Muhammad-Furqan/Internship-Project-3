@@ -27,8 +27,8 @@ function Home() {
                 alt={articles[0].title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-                <h1 className="text-3xl font-bold text-white mb-2">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-black/5 p-4">
+                <h1 className="text-xl lg:text-3xl font-semibold lg:font-bold text-white mb-2">
                   {articles[0].title}
                 </h1>
                 <p className="text-gray-200">{articles[0].description}</p>
