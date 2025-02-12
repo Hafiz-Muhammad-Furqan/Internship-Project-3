@@ -18,8 +18,16 @@ function Home() {
 
   return (
     <div className="space-y-8">
-      {articles[0] && (
-        <a href={articles[0].url} target="blank">
+      {articles.length === 0 && (
+        <div className="flex flex-col items-center justify-center mt-20">
+          <p className="text-2xl font-semibold text-gray-600 text-center dark:text-gray-200 ">
+            😕 No News Found. Try searching with different keywords.
+          </p>
+        </div>
+      )}
+
+      {articles.length > 0 && articles[0] && (
+        <a href={articles[0].url} target="_blank" rel="noopener noreferrer">
           <section className="card p-0 cursor-pointer">
             <div className="relative h-[400px]">
               <img
@@ -38,14 +46,16 @@ function Home() {
         </a>
       )}
 
-      <section>
-        <h2 className="text-2xl font-bold mb-4">Latest News</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {articles.slice(1).map((article, index) => (
-            <NewsCard key={index} article={article} />
-          ))}
-        </div>
-      </section>
+      {articles.length > 1 && (
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Latest News</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {articles.slice(1).map((article, index) => (
+              <NewsCard key={index} article={article} />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

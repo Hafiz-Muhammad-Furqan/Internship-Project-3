@@ -16,11 +16,10 @@ function NewsDetail() {
   const [article, setArticle] = useState(null);
 
   useEffect(() => {
-    // Article ko find karna aur state update karna
     const foundArticle = articles.find((a) => a.title === id);
     setArticle(foundArticle);
     setLoading(false);
-  }, [id, articles]); // Dependencies array ka dhyan dein
+  }, [id, articles]);
 
   const fallbackImage =
     "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1000&auto=format&fit=crop";
@@ -60,7 +59,7 @@ function NewsDetail() {
         </Link>
       </div>
 
-      <h1 className="text-3xl font-bold mb-4">{article.title}</h1>
+      <h1 className="md:text-3xl text-2xl font-bold mb-4">{article.title}</h1>
 
       <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-6">
         <div className="flex items-center space-x-2">
@@ -73,8 +72,6 @@ function NewsDetail() {
           <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
         </div>
       </div>
-
-    
 
       {(article.urlToImage || fallbackImage) && (
         <div className="relative h-[400px] mb-6">
