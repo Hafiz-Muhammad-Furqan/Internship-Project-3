@@ -17,7 +17,7 @@ function App() {
       dispatch(setLoading(true));
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=us&apiKey=${
+          `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=${
             import.meta.env.VITE_API_KEY
           }`
         );
