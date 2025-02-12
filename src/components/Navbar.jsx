@@ -47,7 +47,7 @@ function Navbar() {
     dispatch(setLoading(true));
     try {
       const response = await axios.get(
-        `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${encodeURIComponent(
+        `https://newsapi.org/v2/everything?q=${encodeURIComponent(
           search
         )}&apiKey=${import.meta.env.VITE_API_KEY}`
       );
@@ -66,7 +66,7 @@ function Navbar() {
     dispatch(setLoading(true));
     try {
       const response = await axios.get(
-        `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?category=${encodeURIComponent(
+        `https://newsapi.org/v2/top-headlines?category=${encodeURIComponent(
           category.toLowerCase()
         )}&apiKey=${import.meta.env.VITE_API_KEY}`
       );
